@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Naturaleza</title>
+    <style>
+        body {
+            background-color: #94c28a; /* Color de fondo agradable */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            border: 2px solid #6a9b68;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Galería de Naturaleza</h1>
+    <div class="gallery">
+        <img src="imagen1.jpg" alt="Imagen 1" onclick="changeImage(this, 7)">
+        <img src="imagen2.jpg" alt="Imagen 2" onclick="changeImage(this, 8)">
+        <img src="imagen3.jpg" alt="Imagen 3" onclick="changeImage(this, 9)">
+        <img src="imagen4.jpg" alt="Imagen 4" onclick="changeImage(this, 10)">
+        <img src="imagen5.jpg" alt="Imagen 5" onclick="changeImage(this, 11)">
+        <img src="imagen6.jpg" alt="Imagen 6" onclick="changeImage(this, 12)">
+    </div>
+
+    <script>
+        const images = [
+            'imagen1.jpg',
+            'imagen2.jpg',
+            'imagen3.jpg',
+            'imagen4.jpg',
+            'imagen5.jpg',
+            'imagen6.jpg',
+            'imagen7.jpg', // Nueva imagen 7
+            'imagen8.jpg', // Nueva imagen 8
+            'imagen9.jpg', // Nueva imagen 9
+            'imagen10.jpg', // Nueva imagen 10
+            'imagen11.jpg', // Nueva imagen 11
+            'imagen12.jpg' // Nueva imagen 12
+        ];
+
+        let currentImageIndex = 0;
+
+        function changeImage(image, newIndex) {
+            if (currentImageIndex === newIndex - 1) {
+                // Si el índice es el mismo, cambiar al conjunto original
+                image.src = images[newIndex - 7];
+                currentImageIndex = newIndex - 7;
+            } else {
+                // Si el índice es diferente, cambiar al conjunto nuevo
+                image.src = images[newIndex - 1];
+                currentImageIndex = newIndex - 1;
+            }
+        }
+    </script>
+</body>
+</html>
